@@ -1,7 +1,7 @@
 
 public class BinarySearchTree {
 	
-	public Node root = null;
+	private NodeTree root = null;
 	
 	public void addSingle(int n){
 		add(root, n);
@@ -13,28 +13,28 @@ public class BinarySearchTree {
 			this.add(root, array[i]);
 	}
 	
-	private void add(Node node, int n){
+	private void add(NodeTree node, int n){
 		if(n < node.key){
 			if(node.left == null)
-				node.left = new Node(n);
+				node.left = new NodeTree(n);
 			else
 				add(node.left, n);
 		}
 		else if(n >= node.key){
 			if(node.right == null)
-				node.left = new Node(n);
+				node.left = new NodeTree(n);
 			else
 				add(node.right, n);
 		}
 	}
 	
-	public int heightOfTree(Node node){
+	public int heightOfTree(NodeTree node){
 		if(node.left == null && node.right == null)
 			return 0;
 		return 1 + Math.max(heightOfTree(node.left), heightOfTree(node.right));
 	}
 	
-	private void find(Node node, int n){
+	private void find(NodeTree node, int n){
 		if(n == node.key)
 			return;
 		else if(n < node.key)

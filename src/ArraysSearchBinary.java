@@ -18,7 +18,7 @@ public class ArraysSearchBinary {
 				} else if (arrayA[i]< arrayB[middle]){
 					high = middle -1;
 				}
-				else
+				//else
 					//break w C, nie wiem co w Javie, halp
 				
 			}
