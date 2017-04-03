@@ -39,6 +39,16 @@
     		find(node.getNext(), n);
     }
     
+    private void find2(NodeList node, int n){
+    	while(node.getKey() != n){
+    		if(node.getNext() == null)
+    			return;
+    		else
+    			node = node.getNext();
+    	}
+    	return;
+    }
+    
     public void findSingle(int n){
     	find(head, n);
     }

@@ -1,10 +1,17 @@
 
 public class ArrayOperations {
 	
+	private static int binarySpreadCounter;
+	
 	public static void printOut(int[] array){
 		System.out.println();
 		for(int i = 0; i < array.length; i++)
 			System.out.print(String.valueOf(array[i]) + " ");
+	}
+	
+	public static void binarySearchArray(int[] arrayA, int[] arrayB){
+		for(int i = 0; i < arrayA.length; i++)
+			binarySearch(arrayB, arrayA[i]);
 	}
 
 	public static void binarySearch(int[] array, int n){
@@ -17,6 +24,7 @@ public class ArrayOperations {
 	}
 	
 	public static void binarySpreadArray(int[] arrayIn, int[] arrayOut){
+		binarySpreadCounter = 0;
 		binarySpreadArray(arrayIn, arrayOut, 0, arrayIn.length - 1);
 	}
 	
@@ -29,7 +37,7 @@ public class ArrayOperations {
 	}
 	
 	private static void binarySearch(int[] array, int n, int left, int right){
-		int middle = Math.floorDiv(left, right);
+		int middle = ((left + right) / 2);
 		if(array[middle] == n)
 			return;
 		else if(right - left == 0)
@@ -41,8 +49,9 @@ public class ArrayOperations {
 	}
 	
 	private static void binarySpreadArray(int[] arrayIn, int[] arrayOut, int left, int right){
-		int middle = Math.floorDiv(left, right);
-		arrayOut[arrayOut.length - 1] = arrayIn[middle];
+		int middle = ((left + right) / 2);
+		arrayOut[binarySpreadCounter] = arrayIn[middle];
+		binarySpreadCounter++;
 		if(middle > left)
 			binarySpreadArray(arrayIn, arrayOut, left, middle - 1);
 		if(middle < right)
