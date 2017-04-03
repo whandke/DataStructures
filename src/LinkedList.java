@@ -29,7 +29,7 @@
     		add(array[i]);
     }
     
-    private void find(NodeList node, int n){    	
+    private void find2(NodeList node, int n){    	
     	if(node == null)
     		return;
     	
@@ -39,7 +39,7 @@
     		find(node.getNext(), n);
     }
     
-    private void find2(NodeList node, int n){
+    private void find(NodeList node, int n){
     	while(node.getKey() != n){
     		if(node.getNext() == null)
     			return;

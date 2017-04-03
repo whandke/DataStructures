@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class DataStructuresMain {
 	
 	private static void printHead(boolean excel){
+		POut.newLine();
+		System.out.print("Starting...");
+		POut.newLine();
+		POut.newLine();
+		POut.newLine();
 		POut.beginTableRow(excel);
 		System.out.print("np");
 		POut.separatorTableRow(excel);
@@ -78,5 +83,6 @@ public class DataStructuresMain {
 				loop = true;
 			else loop = false;
 		}while(loop);
+		scan.close();
 	}
 }

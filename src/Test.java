@@ -97,12 +97,17 @@ public class Test {
 	
 	private static void tbTest(int[] array, boolean excel){
 		BinarySearchTree bst = new BinarySearchTree();
+		int[] arrayC = array.clone();
+		Arrays.sort(arrayC);
 		int[] arrayB = new int[array.length];
-		ArrayOperations.binarySpreadArray(array, arrayB);
+		ArrayOperations.binarySpreadArray(arrayC, arrayB);
+		
 		POut.separatorTableRow(excel);
 		treeTestOne(arrayB, bst, excel);
+		
 		POut.separatorTableRow(excel);
 		treeTestTwo(bst, excel);
+		
 		POut.separatorTableRow(excel);
 		treeTestThree(array, bst, excel);
 	}
