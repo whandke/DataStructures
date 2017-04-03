@@ -18,7 +18,7 @@ public class ArrayGenerator {
 
 	public static void rising(int[] array){
 		for(int i = 0; i < array.length; i++)
-			array[i] = i + 1;
+			array[i] = i;
 	}
 	
 	public static void vShape(int[] array, int maximum){
@@ -48,9 +48,7 @@ public class ArrayGenerator {
 		for(int i = 0; i < length; i++)
 			swap(rising, i, random[i]);
 		for(int i = 0; i < length; i++)
-			array[i] = rising[i];
-		
-		
+			array[i] = rising[i];		
 	}
 
 }

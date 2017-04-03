@@ -1,5 +1,11 @@
 
 public class ArrayOperations {
+	
+	public static void printOut(int[] array){
+		System.out.println();
+		for(int i = 0; i < array.length; i++)
+			System.out.print(String.valueOf(array[i]) + " ");
+	}
 
 	public static void binarySearch(int[] array, int n){
 		binarySearch(array, n, 0, array.length - 1);

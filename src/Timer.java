@@ -11,8 +11,8 @@ public class Timer {
 	
 	public static void printTime(double time){
 		DecimalFormat df = new DecimalFormat("0");
-        df.setMaximumFractionDigits(4);
-        System.out.print(df.format(time));
+        df.setMaximumFractionDigits(8);
+        System.out.println(df.format(time));
 	}
 
 }
