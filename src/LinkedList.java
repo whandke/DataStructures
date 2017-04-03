@@ -29,7 +29,8 @@
     		add(array[i]);
     }
     
-    private void find2(NodeList node, int n){    	
+    @SuppressWarnings("unused")
+	private void find2(NodeList node, int n){    	
     	if(node == null)
     		return;
     	
