@@ -1,7 +1,11 @@
 
 public class BinarySearchTree {
 	
-	private NodeTree root = null;
+	private NodeTree root;
+	
+	public BinarySearchTree(){
+		this.root = null;
+	}
 	
 	public void addSingle(int n){
 		add(root, n);
@@ -14,33 +18,35 @@ public class BinarySearchTree {
 	}
 	
 	private void add(NodeTree node, int n){
-		if(n < node.key){
-			if(node.left == null)
-				node.left = new NodeTree(n);
+		if(n < node.getKey()){
+			if(node.getLeft() == null)
+				node.setLeft(new NodeTree(n));
 			else
-				add(node.left, n);
+				add(node.getLeft(), n);
 		}
-		else if(n >= node.key){
-			if(node.right == null)
-				node.left = new NodeTree(n);
+		else if(n >= node.getKey()){
+			if(node.getRight() == null)
+				node.setRight(new NodeTree(n));
 			else
-				add(node.right, n);
+				add(node.getRight(), n);
 		}
 	}
 	
 	public int heightOfTree(NodeTree node){
-		if(node.left == null && node.right == null)
+		if(node.getLeft() == null && node.getRight() == null)
 			return 0;
-		return 1 + Math.max(heightOfTree(node.left), heightOfTree(node.right));
+		return 1 + Math.max(heightOfTree(node.getLeft()), heightOfTree(node.getRight()));
 	}
 	
 	private void find(NodeTree node, int n){
-		if(n == node.key)
+		if(node == null)
 			return;
-		else if(n < node.key)
-			find(node.left, n);
-		else if(n > node.key)
-			find(node.right, n);
+		if(node.getKey() == n)
+			return;
+		else if(n < node.getKey())
+			find(node.getLeft(), n);
+		else if(n > node.getKey())
+			find(node.getRight(), n);
 	}
 	
 	public void findFromArray(int[] array){
@@ -52,7 +58,4 @@ public class BinarySearchTree {
 	public void findSingle(int n){
 		find(root, n);
 	}
-	
-
-
 }
